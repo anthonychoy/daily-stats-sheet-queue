@@ -44,8 +44,9 @@ app.post('/start', async (req, res) => {
     
         return result;
       };
-  
-      for (const leadId of leads) {
+      console.log('Lead number: ', leads.length);
+      for (const [index, leadId] of leads.entries()) {
+        console.log(`${index+1} / ${leads.length}`)
         console.log('Updating lead ', leadId)
         try {
           await updateLeadStatus(leadId);
