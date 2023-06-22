@@ -4,9 +4,13 @@ const port = 3000
 const path = require('path');
 const axios = require('axios');
 const bodyParser = require('body-parser');
+const timeout = require('connect-timeout')
 require('dotenv').config();
 
 let isProcessing = false;
+
+// Timeout
+app.use(timeout('86400s'));
 
 // Middleware setup
 app.use(bodyParser.json()); // Parse JSON request bodies
