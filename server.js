@@ -37,7 +37,7 @@ app.post('/start', async (req, res) => {
           {
             auth: {
               username: process.env['USERNAME'],
-              password: process.env['PASSWORD'],
+              password: '',
             },
           }
         );
